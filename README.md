@@ -1,4 +1,28 @@
-# WebappAngularDr
+# WebApp-DR
+
+Ejercicio de desarrollo WebApp Angular Master de programación UDEMY. 
+[Contenido del curso](https://www.udemy.com/course/master-en-javascript-aprender-js-jquery-angular-nodejs-y-mas/?src=sac&kw=master%20en%20javascript%20jque)
+
+### STATUS: *** EM CURSO *** ###
+
+
+
+ Objetivos del ejercicio:
+- [ ] Maquetar una web parecida a esta
+###![Screenshot](./src/img/MaquetaAngular.png)
+
+- [ ] Hacer diferentes secciones, cada una en una página distinta.
+        a. Sobre mi
+        b. Proyectos
+        c. Crear Proyectos
+        d. Contacto
+- [ ] En la sección de crear proyectos, hacer un formulario que guarde nuevos proyectos en el backend(NodeJS) usando el API REST.
+- [ ] Listar los proyectos en la sección de Proyectos.
+###![Screenshot](./src/img/MaquetaProyectos.png)
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4.
 
