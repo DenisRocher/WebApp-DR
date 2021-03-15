@@ -1,12 +1,14 @@
 <h1>Proyecto Angular</h1>
-  <nav class="menu">
-    <a [routerLink]="['/sobre-mi']" routerLinkActive="router-link-active" >sobre-mi</a>
-    &nbsp;
-    <a [routerLink]="['/contacto']" routerLinkActive="router-link-active" >contacto</a>
-    &nbsp;
-    <a [routerLink]="['/proyectos']" routerLinkActive="router-link-active" >proyectos</a>
-    &nbsp;
-    <a [routerLink]="['/crear-proyecto']" routerLinkActive="router-link-active" >crear-proyecto</a>  
-    &nbsp;
-  </nav>
+<header>
+    <li><a [routerLink]="['/sobre-mi']" routerLinkActive="router-link-active" >sobre-mi</a></li>
+    <li><a [routerLink]="['/proyectos']" routerLinkActive="router-link-active" >proyectos</a></li>
+    <li class="logo"><a href="#">DR</a></li>
+    <li><a [routerLink]="['/crear-proyecto']" routerLinkActive="router-link-active" >crear-proyecto</a></li>
+    <li><a [routerLink]="['/contacto']" routerLinkActive="router-link-active" >contacto</a></li>
+</header>
+<section>
 <router-outlet></router-outlet>
+</section>
+<footer>
+  Denis Rocher - Fotógrafo &copy;
+</footer>
