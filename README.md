@@ -8,7 +8,7 @@ Ejercicio de desarrollo WebApp Angular Master de programación UDEMY.
 
 
  Objetivos del ejercicio:
-- [ ] Maquetar una web parecida a esta
+- [X] Maquetar una web parecida a esta
 ![Screenshot](./src/img/MaquetaAngular.png)
 
 - [ ] Hacer diferentes secciones, cada una en una página distinta.
