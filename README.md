@@ -19,7 +19,9 @@ Ejercicio de desarrollo WebApp Angular Master de programación UDEMY.
 - [ ] En la sección de crear proyectos, hacer un formulario que guarde nuevos proyectos en el backend(NodeJS) usando el API REST.
 - [ ] Listar los proyectos en la sección de Proyectos.
 ![Screenshot](./src/img/MaquetaProyectos.png)
-
+- [ ] Página individual del proyecto.
+- [ ] Botón de editar proyecto, y hacer que funcione.
+- [ ] Botón de borrar proyecto, y hacer que funcione.
 
 
 
