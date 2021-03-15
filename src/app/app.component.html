@@ -1,10 +1,11 @@
-<h1>Proyecto Angular</h1>
 <header>
+  <ul>
     <li><a [routerLink]="['/sobre-mi']" routerLinkActive="router-link-active" >sobre-mi</a></li>
     <li><a [routerLink]="['/proyectos']" routerLinkActive="router-link-active" >proyectos</a></li>
-    <li class="logo"><a href="#">DR</a></li>
+    <li id="logo"><a href="#">DR</a></li>
     <li><a [routerLink]="['/crear-proyecto']" routerLinkActive="router-link-active" >crear-proyecto</a></li>
     <li><a [routerLink]="['/contacto']" routerLinkActive="router-link-active" >contacto</a></li>
+  </ul>
 </header>
 <section>
 <router-outlet></router-outlet>
