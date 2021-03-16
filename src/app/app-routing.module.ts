@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CreateComponent } from "./components/create/create.component";
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ErrorComponent } from "./components/error/error.component";
+import { StoriesComponent } from "./components/stories/stories.component";
 
 // Array de configuración de rutas
 const appRoutes: Routes = [
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
   { path: 'sobre-mi', component: AboutComponent },
   { path: 'contacto', component: ContactComponent },
   { path: 'proyectos', component: ProjectsComponent },
-  { path: 'crear-proyecto', component: CreateComponent },
+  { path: 'relatos', component: StoriesComponent },
+  { path: 'crear-relato', component: CreateComponent },
   { path: '**', component: ErrorComponent }
 ];
 @NgModule({
