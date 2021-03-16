@@ -105,14 +105,16 @@
   #title h1 
     font-family: finger, Arial, Helvetica, sans-serif
     font-size: 60px
-    border-bottom: 1px solid #ccc
+    border-bottom: 1px solid rgba(53, 103, 164, 0.8)
     padding-bottom: 5px
+    color: rgba(53, 103, 164, 0.8)
 
   #title h2, p
     font-size: 25px
     color: gray
     margin-top: 5px
     margin-bottom: 5px
+    font-style: italic
 
   article.about
     width: 70% 
@@ -125,7 +127,8 @@
   .about h2
     font-family: yanone
     font-size: 30px
-    border-bottom: 1px solid #ccc 
+    border-bottom: 1px solid rgba(53, 103, 164, 0.8) 
+    color: rgba(53, 103, 164, 0.8)
     padding-bottom: 5px
     margin-bottom: 5px
 
@@ -133,9 +136,53 @@
     padding-top: 20px
     padding-bottom: 30px
 
-
-    
-
+  /* FORMULARIO DE CREACIÓN DE RELATO */
+  .container 
+    width: 70%
+    padding: 50px 
+    margin: 0px auto 
+    margin-top: 20px 
+    margin-bottom: 60px
   
+  .container h2
+    display: block 
+    font-family: yanone
+    font-size: 30px
+    color: rgba(53, 103, 164, 0.8) 
+    border-bottom: 1px solid rgba(53, 103, 164, 0.8) 
+    padding-bottom: 5px 
+    margin-bottom: 5px
+
+  form
+    width: 50%
+
+  form label
+    display: block
+    font-style: normal
+    font-size: 25px
+    width: 100%
+    margin-top: 10px
+    margin-bottom: 5px
+
+  form input[type='text'],
+  form input[type='number'],
+  form input[type='email'],
+  form textarea,
+  form input[type='file']
+    width: 90%
+    font-size: 15px
+    padding: 5px
+
+  form button,
+  form input[type='submit']
+    display: block
+    font-size: 15px
+    padding: 5px
+    margin-top: 15px
+    color: white
+    background: rgba(53, 103, 164, 1)
+
+
+
 
 

@@ -1,5 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule} from "@angular/common/http"; //Módulo para peticines AJAX
+import { FormsModule } from '@angular/forms';
+
+//Formato de fechas y hora Chile
+import { LOCALE_ID } from '@angular/core';
+// FECHAS EN FORMATO ES
+import localeEsCl from "@angular/common/locales/es-CL";
+import { registerLocaleData } from "@angular/common";
+registerLocaleData(localeEsCl, 'es-CL');
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,9 +32,13 @@ import { StoriesComponent } from './components/stories/stories.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es-CL' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

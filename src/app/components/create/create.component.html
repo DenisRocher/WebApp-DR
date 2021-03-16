@@ -1,1 +1,51 @@
-<p>create works!</p>
+<div class="container">
+<h2>{{title}}</h2>
+<form #storyForm='ngForm' (ngSubmit)='onSubmit(storyForm)'>
+  <p>
+    <label for="name">Nombre</label>
+    <input type="text" name="name" placeholder="Nombre Relato" 
+      required pattern="[A-Za-z0-9_ ]+"
+      #name="ngModel" [(ngModel)]="story.name" >
+    <span *ngIf="name.touched && !name.valid">
+      El nombre del relato es obligatorio
+    </span>
+  </p>
+  <p>
+    <label for="description">Relato</label>
+    <textarea name="description" id="" cols="30" rows="10" placeholder="Su relato"
+      required
+      #description="ngModel" [(ngModel)]="story.description" ></textarea>
+      <span *ngIf="description.touched && !description.valid">
+        El relato es obligatorio
+      </span>
+  </p>
+  <p>
+    <label for="category">Categoria</label>
+    <input type="text" name="category" placeholder="Tipo de relato" 
+      required pattern="[A-Za-z0-9_ /]+"
+      #category="ngModel" [(ngModel)]="story.category" >
+    <span *ngIf="category.touched && !category.valid">
+        La categoria del relato es obligatoria
+    </span>
+  </p>
+  <p>
+    <label for="year">Año publicación</label>
+    <input type="number" name="year" placeholder="Año del relato" 
+      required pattern="[0-9]+"
+      #year="ngModel" [(ngModel)]="story.year" >
+    <span *ngIf="year.touched && !year.valid">
+        El año del relato es obligatorio
+    </span>
+  </p>
+  <p>
+    <label for="image">Fotografia</label>
+    <input type="file" name="image" placeholder="Subir fotografía"
+      required
+      #image="ngModel" [(ngModel)]="story.image" >
+    <span *ngIf="image.touched && !image.valid">
+        La fotografia del relato es obligatoria
+    </span>
+  </p>
+  <input type="submit" value="Crear relato">
+</form>
+</div>
