@@ -17,6 +17,15 @@ export class StoryService{
   testService() {
     return 'Test Servicio Relato OK'
   }
+
+  saveStory(story:Story): Observable<any> {
+    let params = JSON.stringify(story);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.post(this.url + 'story/save', params, {headers: headers});
+
+
+  }
 }
 
 

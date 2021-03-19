@@ -1,51 +1,71 @@
 <div class="container">
 <h2>{{title}}</h2>
+<div *ngIf="status == 'OK'" class="message success">
+    <img src="../../../assets/img/OK.png" alt="Succes" width="20" height="20">
+    Se ha creado correctamente el relato.
+    <br> 
+    Puede <a href='#'>verlo aquí</a>
+</div>
+<div *ngIf="status == 'KO'" class="message failed">
+    <img src="../../../assets/img/KO.png" alt="Error" width="20" height="20">
+    ERROR al crear el relato.
+</div>
 <form #storyForm='ngForm' (ngSubmit)='onSubmit(storyForm)'>
   <p>
     <label for="name">Nombre</label>
     <input type="text" name="name" placeholder="Nombre Relato" 
       required pattern="[A-Za-z0-9_ ]+"
       #name="ngModel" [(ngModel)]="story.name" >
-    <span *ngIf="name.touched && !name.valid">
-      El nombre del relato es obligatorio
-    </span>
   </p>
+  <div *ngIf="name.touched && !name.valid" class="divInvalid">
+    <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">El nombre del relato es obligatorio.
+  </div>
   <p>
     <label for="description">Relato</label>
     <textarea name="description" id="" cols="30" rows="10" placeholder="Su relato"
       required
       #description="ngModel" [(ngModel)]="story.description" ></textarea>
-      <span *ngIf="description.touched && !description.valid">
-        El relato es obligatorio
-      </span>
   </p>
+  <div *ngIf="description.touched && !description.valid" class='divInvalid'>
+    <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">El relato es obligatorio.
+  </div>
   <p>
     <label for="category">Categoria</label>
     <input type="text" name="category" placeholder="Tipo de relato" 
       required pattern="[A-Za-z0-9_ /]+"
       #category="ngModel" [(ngModel)]="story.category" >
-    <span *ngIf="category.touched && !category.valid">
-        La categoria del relato es obligatoria
-    </span>
   </p>
+  <div *ngIf="category.touched && !category.valid" class='divInvalid'>
+    <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">La categoria es obligatoria.
+  </div>
   <p>
     <label for="year">Año publicación</label>
     <input type="number" name="year" placeholder="Año del relato" 
       required pattern="[0-9]+"
       #year="ngModel" [(ngModel)]="story.year" >
-    <span *ngIf="year.touched && !year.valid">
-        El año del relato es obligatorio
-    </span>
   </p>
+  <div *ngIf="year.touched && !year.valid" class='divInvalid'>
+      <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">El año de la publicación es obligatorio.
+  </div>
   <p>
     <label for="image">Fotografia</label>
-    <input type="file" name="image" placeholder="Subir fotografía"
-      required
-      #image="ngModel" [(ngModel)]="story.image" >
-    <span *ngIf="image.touched && !image.valid">
-        La fotografia del relato es obligatoria
-    </span>
   </p>
-  <input type="submit" value="Crear relato">
-</form>
+  <div class="uploader">
+    <div class="input-value" 
+      [ngClass]="(ruta=='')?'ng-invalid':'ng-valid'">{{ruta}}</div>
+      <label for="file_1"></label>
+      <input id="file_1" class="upload" type="file" name="image"
+        required 
+        #image="ngModel" [(ngModel)]="story.image"
+        (change)="fileUpload($event)" 
+        (ngModelChange)="filePath($event)" >
+   </div>
+  <div *ngIf="(clickFile == true && ruta =='') 
+            || (ruta =='' && image.touched)" class='divInvalid'>
+    <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">La fotografía del relato es obligatoria.
+  </div>
+<div class="input__row">
+  <input class="submitbtn" type="submit" value="Crear" [disabled]='!storyForm.form.valid'>
+  <span class="form-arrow"></span>
 </div>
+</form>

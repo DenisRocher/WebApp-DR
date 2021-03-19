@@ -11,12 +11,12 @@ Ejercicio de desarrollo WebApp Angular Master de programación UDEMY.
 - [X] Maquetar una web parecida a esta
 ![Screenshot](./src/img/MaquetaAngular.png)
 
-- [ ] Hacer diferentes secciones, cada una en una página distinta.
+- [X] Hacer diferentes secciones, cada una en una página distinta.
         a. Sobre mi
         b. Proyectos
         c. Crear Proyectos
         d. Contacto
-- [ ] En la sección de crear proyectos, hacer un formulario que guarde nuevos proyectos en el backend(NodeJS) usando el API REST.
+- [X] En la sección de crear proyectos, hacer un formulario que guarde nuevos proyectos en el backend(NodeJS) usando el API REST.
 - [ ] Listar los proyectos en la sección de Proyectos.
 ![Screenshot](./src/img/MaquetaProyectos.png)
 - [ ] Página individual del proyecto.
