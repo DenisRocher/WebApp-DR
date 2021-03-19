@@ -1,1 +1,10 @@
-<p>stories works!</p>
+<div class='container'>
+  <h2>Mis Relatos</h2>
+  <ul>
+    <li *ngFor="let story of stories" class='story'>
+      <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image"/>
+      <h3>{{story.name}}</h3>
+      <p>{{story.category}}</p>
+    </li>
+  </ul>
+</div>

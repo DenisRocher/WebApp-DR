@@ -23,8 +23,13 @@ export class StoryService{
     let headers = new HttpHeaders().set('Content-Type','application/json');
     
     return this._http.post(this.url + 'story/save', params, {headers: headers});
+  }
 
-
+  getStories(category:String): Observable<any> {
+    let params = category;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.get(this.url + 'story/getStories/'+ params, {headers: headers});
   }
 }
 
