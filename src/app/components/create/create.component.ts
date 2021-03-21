@@ -21,6 +21,7 @@ export class CreateComponent implements OnInit {
   public clickFile: boolean;
   public status: string;
   public filesToUpload: Array<File>
+  public msjError: string;
 
   constructor(
     private _storyService: StoryService,
@@ -34,6 +35,7 @@ export class CreateComponent implements OnInit {
     this.clickFile = false;
     this.status = '';
     this.filesToUpload = [];
+    this.msjError = '';
    }
 
   ngOnInit(): void {
@@ -57,12 +59,15 @@ export class CreateComponent implements OnInit {
             .then((result: any) => {
               this.status = 'OK';
               form.reset();
-              console.log(result);
-            });
-            . (error => {
+              //console.log(result);
+            })
+            .catch((error: any) => {
               this.status = 'KO';
-              console.log(<any>error);
+              this.msjError = error.message;
+              //console.log(this.msjError)
+              //console.log(error);
             });
+
         }
         else
           this.status = 'KO';

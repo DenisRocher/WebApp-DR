@@ -8,7 +8,7 @@
 </div>
 <div *ngIf="status == 'KO'" class="message failed">
     <img src="../../../assets/img/KO.png" alt="Error" width="20" height="20">
-    ERROR al crear el relato.
+    ERROR al crear el relato: {{msjError}}
 </div>
 <form #storyForm='ngForm' (ngSubmit)='onSubmit(storyForm)'>
   <p>

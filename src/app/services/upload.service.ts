@@ -31,13 +31,12 @@ export class UploadService {
               resolve(JSON.parse(xhr.response));
             }
             else {
-              reject(xhr.response);
+              reject(JSON.parse(xhr.response));
             }
           }
         }
         xhr.open('POST', url, true);
         xhr.send(formData);
-        
       }
     });
     
