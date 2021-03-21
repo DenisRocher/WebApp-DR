@@ -5,7 +5,8 @@ export class Story{
     public description: String,
     public category: String,
     public year: number,
-    public image: String
+    public image: String,
+    public fileext: String
   )
   {}
 

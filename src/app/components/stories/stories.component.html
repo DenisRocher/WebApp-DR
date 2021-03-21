@@ -3,7 +3,7 @@
   <ul>
     <li *ngFor="let story of stories" class='story'>
       <div class='image'>
-        <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image"/>
+        <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image && (story.fileext == 'png' || story.fileext  == 'jpg' || story.fileext  == 'jpeg' || story.fileext  == 'gif')"/>
       </div>
       <h3>{{story.name}}</h3>
       <p>{{story.category}}</p>

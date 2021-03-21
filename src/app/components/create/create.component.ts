@@ -29,7 +29,7 @@ export class CreateComponent implements OnInit {
       )
     {
     this.title = 'Crear relato';
-    this.story = new Story('', '', '', '', 2010, '');
+    this.story = new Story('', '', '', '', 2010, '','');
     this.category = new Category('','',-1);
     this.ruta = '';
     this.clickFile = false;

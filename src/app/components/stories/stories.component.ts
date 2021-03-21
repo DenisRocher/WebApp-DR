@@ -18,7 +18,7 @@ export class StoriesComponent implements OnInit {
     private _storyService: StoryService
   ) {
     this.filterCategory = '';
-    this.stories = [new Story('', '', '', '', 2010, '')];
+    this.stories = [new Story('', '', '', '', 2010, '','')];
     this.url = UrlGlobal.url;
   }
 
@@ -32,7 +32,7 @@ export class StoriesComponent implements OnInit {
     this._storyService.getStories(filterCategory).subscribe(
       response => {
         if (response.stories) {
-          console.log(response);
+          //console.log(response);
           this.stories = response.stories;
         }
       },
