@@ -52,12 +52,16 @@ export class CreateComponent implements OnInit {
               UrlGlobal.url + 'story/upload-image/' + response.story._id,
               [],
               this.filesToUpload,
-              'image'              
-          )
+              'image'
+            )
             .then((result: any) => {
               this.status = 'OK';
               form.reset();
               console.log(result);
+            });
+            . (error => {
+              this.status = 'KO';
+              console.log(<any>error);
             });
         }
         else
