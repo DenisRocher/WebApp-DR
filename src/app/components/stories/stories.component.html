@@ -2,15 +2,18 @@
   <h2>Mis Relatos</h2>
   <ul>
     <li *ngFor="let story of stories" class='story'>
+      <a [routerLink]="['/relato',story._id]" routerLinkActive="router-link-active">
       <div class='ilustration'>
         <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image && (story.fileext == 'png' || story.fileext  == 'jpg' || story.fileext  == 'jpeg' || story.fileext  == 'gif')"/>
-        <video controls>
+        <video *ngIf="story.image && (story.fileext == 'avi' || story.fileext  == 'mp4' || story.fileext  == 'mov' || story.fileext  == 'mkv')"
+          class='video'>
           <source src="{{url}}story/getimage/{{story.image}}" type="video/{{story.fileext}}"
-          *ngIf="story.image && (story.fileext == 'avi' || story.fileext  == 'mp4' || story.fileext  == 'mov' || story.fileext  == 'mkv')">
+          >
         </video>
       </div>
         <h3>{{story.name}}</h3>
         <h3>{{story.category}}</h3>
+      </a>
     </li>
   </ul>
 </div>
