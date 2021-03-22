@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
   public status: string;
   public filesToUpload: Array<File>
   public msjError: string;
-  public idNewStory: string;
+  public idStory: string;
 
   constructor(
     private _storyService: StoryService,
@@ -37,7 +37,7 @@ export class CreateComponent implements OnInit {
     this.status = '';
     this.filesToUpload = [];
     this.msjError = '';
-    this.idNewStory = '';
+    this.idStory = '';
    }
 
   ngOnInit(): void {
@@ -51,7 +51,7 @@ export class CreateComponent implements OnInit {
         //console.log(response);
         if (response.story) {
           //Subir la Imagen
-          this.idNewStory = response.story._id;
+          this.idStory = response.story._id;
           this._upladService
             .makeFileRequest(
               UrlGlobal.url + 'story/upload-image/' + response.story._id,
