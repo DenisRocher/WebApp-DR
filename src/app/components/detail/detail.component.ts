@@ -30,10 +30,10 @@ export class DetailComponent implements OnInit {
     this._route.params.subscribe(params => {
       this.id = params.id;
     });
-    this.gestStory(this.id);
+    this.getStory(this.id);
   }
 
-  gestStory(id: String) {
+  getStory(id: String) {
     console.log(id);
     // Se guardan los datos del relato
     this._storyService.getStory(id).subscribe(
@@ -41,6 +41,22 @@ export class DetailComponent implements OnInit {
         if (response.story) {
           //console.log(response);
           this.story = response.story;
+        }
+      },
+      error => {
+        console.log(<any>error)
+      }
+    );
+  }
+
+  deleteStory(id: String) {
+    console.log(id);
+    // Se guardan los datos del relato
+    this._storyService.deleteStory(id).subscribe(
+      response => {
+        if (response.story) {
+          //console.log(response);
+          this._router.navigate(['/relatos']);
         }
       },
       error => {

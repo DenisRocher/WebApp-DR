@@ -38,6 +38,20 @@ export class StoryService{
     
     return this._http.get(this.url + 'story/getStory/'+ params, {headers: headers});
   }
+
+  deleteStory(id:String): Observable<any> {
+    let params = id;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.delete(this.url + 'story/delete/'+ params, {headers: headers});
+  }
+
+  updateStory(story:Story): Observable<any> {
+    let params = JSON.stringify(story);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.post(this.url + 'story/update/'+story._id, params, {headers: headers});
+  }
 }
 
 
