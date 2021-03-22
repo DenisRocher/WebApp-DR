@@ -50,7 +50,7 @@ export class EditComponent implements OnInit {
       this.idStory = params.id;
     });
     this.getStory(this.idStory);
-    this.ruta = this.url+'story/getimage/'+this.story.image;
+    //this.ruta = this.url+'story/getimage/'+this.story.image;
   }
 
   getStory(id: String) {
