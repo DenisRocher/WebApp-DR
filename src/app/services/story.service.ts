@@ -31,6 +31,13 @@ export class StoryService{
     
     return this._http.get(this.url + 'story/getStories/'+ params, {headers: headers});
   }
+
+  getStory(id:String): Observable<any> {
+    let params = id;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.get(this.url + 'story/getStory/'+ params, {headers: headers});
+  }
 }
 
 
