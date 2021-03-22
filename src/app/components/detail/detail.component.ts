@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Story } from "../../models/story";
 import { StoryService } from '../../services/story.service';
 import { UrlGlobal } from '../../services/global';
+import { Router, ActivatedRoute, Params } from "@angular/router";
+
 
 @Component({
   selector: 'app-stories',
@@ -15,7 +17,9 @@ export class DetailComponent implements OnInit {
   public id: String;
 
   constructor(
-    private _storyService: StoryService
+    private _storyService: StoryService,
+    private _router: Router,
+    private _route: ActivatedRoute
   ) {
     this.id = '';
     this.story = new Story('', '', '', '', 2010, '','');
@@ -23,6 +27,10 @@ export class DetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._route.params.subscribe(params => {
+      this.id = params.id;
+    });
+    this.gestStory(this.id);
   }
 
   gestStory(id: String) {
