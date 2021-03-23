@@ -67,10 +67,8 @@
     <div class="input-value" 
       [ngClass]="(ruta=='')?'ng-invalid':'ng-valid'">{{ruta}}</div>
       <label for="file_1"></label>
-      <input id="file_1" class="upload" type="file" name="image"
-        #image="ngModel" [(ngModel)]="story.image"
-        (change)="fileUpload($event)" 
-        (ngModelChange)="filePath($event)" >
+      <input id="#file_1" class="upload" type="file" name="image"
+        (change)="fileUpload($event)">
    </div>
   <div *ngIf="(clickFile == true && ruta =='') 
             || (ruta =='' && image.touched)" class='divInvalid'>
