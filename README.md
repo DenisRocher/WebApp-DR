@@ -3,12 +3,10 @@
 Ejercicio de desarrollo WebApp Angular Master de programación UDEMY. 
 [Contenido del curso](https://www.udemy.com/course/master-en-javascript-aprender-js-jquery-angular-nodejs-y-mas/?src=sac&kw=master%20en%20javascript%20jque)
 
-### STATUS: *** EM CURSO *** ###
+### STATUS: *** FINALIZADO *** ###
 
-
-
- Objetivos del ejercicio:
-- [X] Maquetar una web parecida a esta
+Objetivos del ejercicio:
+- [X] Maquetar una webAPP parecida a esta
 ![Screenshot](./src/img/MaquetaAngular.png)
 
 - [X] Hacer diferentes secciones, cada una en una página distinta.
@@ -17,11 +15,11 @@ Ejercicio de desarrollo WebApp Angular Master de programación UDEMY.
         c. Crear Proyectos
         d. Contacto
 - [X] En la sección de crear proyectos, hacer un formulario que guarde nuevos proyectos en el backend(NodeJS) usando el API REST.
-- [ ] Listar los proyectos en la sección de Proyectos.
+- [X] Listar los proyectos en la sección de Proyectos.
 ![Screenshot](./src/img/MaquetaProyectos.png)
-- [ ] Página individual del proyecto.
-- [ ] Botón de editar proyecto, y hacer que funcione.
-- [ ] Botón de borrar proyecto, y hacer que funcione.
+- [X] Página individual del proyecto.
+- [X] Botón de editar proyecto, y hacer que funcione.
+- [X] Botón de borrar proyecto, y hacer que funcione.
 
 
 
