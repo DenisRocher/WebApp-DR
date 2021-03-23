@@ -1,14 +1,19 @@
 <div class="container" *ngIf="story">
 <h2>{{title}}</h2>
-<div *ngIf="status == 'OK'" class="message success">
+<div *ngIf="status == 'OK' && submitButtonName == 'Crear'" class="message success">
     <img src="../../../assets/img/OK.png" alt="Succes" width="20" height="20">
     Se ha creado correctamente el relato.
     <br> 
     Puede<a [routerLink]="['/relato',idStory]" routerLinkActive="router-link-active">verlo aqui</a>
 </div>
-<div *ngIf="status == 'KO'" class="message failed">
+<div *ngIf="status == 'OK' && submitButtonName == 'Guardar'" class="message success">
+    <img src="../../../assets/img/OK.png" alt="Succes" width="20" height="20">
+    Se ha actualizado correctamente el relato.
+    <br> 
+    Puede<a [routerLink]="['/relato',idStory]" routerLinkActive="router-link-active">verlo aqui</a>
+</div><div *ngIf="status == 'KO'" class="message failed">
     <img src="../../../assets/img/KO.png" alt="Error" width="20" height="20">
-    ERROR al crear el relato: {{msjError}}
+    ERROR al crear/actualizar el relato: {{msjError}}
 </div>
 <form #storyForm='ngForm' (ngSubmit)='onSubmit(storyForm)'>
   <p>

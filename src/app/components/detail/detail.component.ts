@@ -34,7 +34,7 @@ export class DetailComponent implements OnInit {
   }
 
   getStory(id: String) {
-    console.log(id);
+    //console.log(id);
     // Se guardan los datos del relato
     this._storyService.getStory(id).subscribe(
       response => {
@@ -50,7 +50,7 @@ export class DetailComponent implements OnInit {
   }
 
   deleteStory(id: String) {
-    console.log(id);
+    //console.log(id);
     // Se guardan los datos del relato
     this._storyService.deleteStory(id).subscribe(
       response => {

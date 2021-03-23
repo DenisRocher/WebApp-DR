@@ -65,6 +65,7 @@ export class CreateComponent implements OnInit {
             )
             .then((result: any) => {
               this.status = 'OK';
+              this.url = '';
               form.reset();
               //console.log(result);
             })
@@ -74,7 +75,6 @@ export class CreateComponent implements OnInit {
               //console.log(this.msjError)
               //console.log(error);
             });
-
         }
         else
           this.status = 'KO';
@@ -83,6 +83,7 @@ export class CreateComponent implements OnInit {
         console.log(<any>error)
       }
     );
+    this.scrollTop();
   }
 
   fileUpload(fileInput: any) {
@@ -91,5 +92,16 @@ export class CreateComponent implements OnInit {
     //console.log(this.filesToUpload);
     this.clickFile = true;
     this.ruta = this.filesToUpload[0].name;
+  }
+
+  scrollTop(){
+    let scrollToTop = window.setInterval(() => {
+      let pos = window.pageYOffset;
+      if (pos > 0) {
+        window.scrollTo(0, pos - 20); // how far to scroll on each step
+      } else {
+        window.clearInterval(scrollToTop);
+      }
+    }, 16);
   }
 }

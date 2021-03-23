@@ -32,13 +32,12 @@ export class EditComponent implements OnInit {
     private _uploadService: UploadService,
     private _router: Router,
     private _route: ActivatedRoute
-  )
-  {
+  ) {
     this.title = 'Editar relato';
     this.submitButtonName = 'Guardar'
     this.url = UrlGlobal.url;
-    this.story = new Story('', '', '', '', 2010, '','');
-    this.category = new Category('','',-1);
+    this.story = new Story('', '', '', '', 2010, '', '');
+    this.category = new Category('', '', -1);
     this.ruta = '';
     this.clickFile = false;
     this.status = '';
@@ -60,7 +59,7 @@ export class EditComponent implements OnInit {
       response => {
         if (response.story) {
           this.story = response.story;
-          this.ruta = this.url + 'story/getimage/' + this.story.image;
+          this.ruta = this.story.image;
         }
       },
       error => {
@@ -86,13 +85,13 @@ export class EditComponent implements OnInit {
               )
               .then((result: any) => {
                 this.status = 'OK';
-                console.log(result);
+                //console.log(result);
               })
               .catch((error: any) => {
                 this.status = 'KO';
                 this.msjError = error.message;
-                console.log(this.msjError)
-                console.log(error);
+                //console.log(this.msjError)
+                //console.log(error);
               });
           }
           else {
@@ -106,6 +105,7 @@ export class EditComponent implements OnInit {
         console.log(<any>error)
       }
     );
+    this.scrollTop();
   }
 
   fileUpload(fileInput: any) {
@@ -114,5 +114,16 @@ export class EditComponent implements OnInit {
     //console.log(this.filesToUpload);
     this.clickFile = true;
     this.ruta = this.filesToUpload[0].name;
+  }
+
+  scrollTop() {
+    let scrollToTop = window.setInterval(() => {
+      let pos = window.pageYOffset;
+      if (pos > 0) {
+        window.scrollTo(0, pos - 20); // how far to scroll on each step
+      } else {
+        window.clearInterval(scrollToTop);
+      }
+    }, 16);
   }
 }
