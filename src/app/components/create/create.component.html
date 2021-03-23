@@ -67,11 +67,10 @@
     <div class="input-value" 
       [ngClass]="(ruta=='')?'ng-invalid':'ng-valid'">{{ruta}}</div>
       <label for="file_1"></label>
-      <input id="#file_1" class="upload" type="file" name="image"
+      <input id="file_1" class="upload" type="file" name="image"
         (change)="fileUpload($event)">
    </div>
-  <div *ngIf="(clickFile == true && ruta =='') 
-            || (ruta =='' && image.touched)" class='divInvalid'>
+  <div *ngIf="(clickFile == true && ruta =='')"  class='divInvalid'>
     <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">La fotografía del relato es obligatoria.
   </div>
 <div class="input__row">

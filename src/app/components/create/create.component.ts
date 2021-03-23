@@ -85,12 +85,11 @@ export class CreateComponent implements OnInit {
     );
   }
 
-  filePath(fileInput: any) {
-    this.clickFile = true;
-    this.ruta = fileInput;
-  }
-
   fileUpload(fileInput: any) {
+    //console.log(fileInput);
     this.filesToUpload = <Array<File>>fileInput.target.files;
+    //console.log(this.filesToUpload);
+    this.clickFile = true;
+    this.ruta = this.filesToUpload[0].name;
   }
 }

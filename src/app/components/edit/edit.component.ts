@@ -108,18 +108,11 @@ export class EditComponent implements OnInit {
     );
   }
 
-  filePath(fileInput: any) {
-    console.log(fileInput);
-    console.log(typeof (fileInput));
-
-    this.clickFile = true;
-    this.ruta = fileInput;
-    console.log(this.ruta);
-  }
-
   fileUpload(fileInput: any) {
+    //console.log(fileInput);
     this.filesToUpload = <Array<File>>fileInput.target.files;
-    console.log(this.filesToUpload);
-    console.log(this.story.image);
+    //console.log(this.filesToUpload);
+    this.clickFile = true;
+    this.ruta = this.filesToUpload[0].name;
   }
 }
