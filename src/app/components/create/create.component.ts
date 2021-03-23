@@ -23,6 +23,7 @@ export class CreateComponent implements OnInit {
   public filesToUpload: Array<File>
   public msjError: string;
   public idStory: string;
+  public url: string;
 
   constructor(
     private _storyService: StoryService,
@@ -31,7 +32,8 @@ export class CreateComponent implements OnInit {
     {
     this.title = 'Crear relato';
     this.story = new Story('', '', '', '', 2010, '','');
-    this.category = new Category('','',-1);
+    this.category = new Category('', '', -1);
+    this.url = '';
     this.ruta = '';
     this.clickFile = false;
     this.status = '';

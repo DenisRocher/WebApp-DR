@@ -5,13 +5,13 @@
     <p>{{story.year}}</p>
   </div>
   <div class='ilustration'>
-        <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image && (story.fileext == 'png' || story.fileext  == 'jpg' || story.fileext  == 'jpeg' || story.fileext  == 'gif')"/>
-        <video controls autoplay *ngIf="story.image && (story.fileext == 'avi' || story.fileext  == 'mp4' || story.fileext  == 'mov' || story.fileext  == 'mkv')"
-          class='video'>
-          <source src="{{url}}story/getimage/{{story.image}}" type="video/{{story.fileext}}"
-          >
-        </video>
-      </div>
+    <img src="{{url}}story/getimage/{{story.image}}" *ngIf="story.image && (story.fileext == 'png' || story.fileext  == 'jpg' || story.fileext  == 'jpeg' || story.fileext  == 'gif')"/>
+    <video controls autoplay *ngIf="story.image && (story.fileext == 'avi' || story.fileext  == 'mp4' || story.fileext  == 'mov' || story.fileext  == 'mkv')"
+      class='video'>
+      <source src="{{url}}story/getimage/{{story.image}}" type="video/{{story.fileext}}"
+      >
+    </video>
+  </div>
   <article class="data">
     <h2>Relato</h2>
     <p>{{story.description}}

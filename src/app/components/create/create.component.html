@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="story">
 <h2>{{title}}</h2>
 <div *ngIf="status == 'OK'" class="message success">
     <img src="../../../assets/img/OK.png" alt="Succes" width="20" height="20">
@@ -50,6 +50,19 @@
   <p>
     <label for="image">Fotografia</label>
   </p>
+  <div *ngIf="story.image" >
+    <img src="{{url}}story/getimage/{{story.image}}" 
+        width='250px'
+        *ngIf="story.image 
+        && (story.fileext == 'png' || story.fileext  == 'jpg' || story.fileext  == 'jpeg' || story.fileext  == 'gif')"/>
+    <video controls 
+        *ngIf="story.image 
+        && (story.fileext == 'avi' || story.fileext  == 'mp4' || story.fileext  == 'mov' || story.fileext  == 'mkv')"
+        width='250px'>
+      <source src="{{url}}story/getimage/{{story.image}}" type="video/{{story.fileext}}"
+      >
+    </video>
+  </div>
   <div class="uploader">
     <div class="input-value" 
       [ngClass]="(ruta=='')?'ng-invalid':'ng-valid'">{{ruta}}</div>

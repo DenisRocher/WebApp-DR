@@ -50,7 +50,7 @@ export class EditComponent implements OnInit {
       this.idStory = params.id;
     });
     this.getStory(this.idStory);
-    //this.ruta = this.url+'story/getimage/'+this.story.image;
+    this.ruta = this.url+'story/getimage/'+this.story.image;
   }
 
   getStory(id: String) {
@@ -71,12 +71,17 @@ export class EditComponent implements OnInit {
   }
 
   filePath(fileInput: any) {
+    console.log(fileInput);
+    console.log(typeof (fileInput));
+
     this.clickFile = true;
     this.ruta = fileInput;
+    console.log(this.ruta);
   }
 
   fileUpload(fileInput: any) {
     this.filesToUpload = <Array<File>>fileInput.target.files;
-    console.log(this.file)
+    console.log(this.filesToUpload);
+    console.log(this.story.image);
   }
 }
