@@ -16,6 +16,7 @@ import { Category } from '../../models/category';
 export class EditComponent implements OnInit {
 
   public title: String;
+  public submitButtonName: String;
   public story: Story;
   public category: Category;
   public ruta: any;
@@ -31,17 +32,19 @@ export class EditComponent implements OnInit {
     private _uploadService: UploadService,
     private _router: Router,
     private _route: ActivatedRoute
-  ) { 
-      this.title = 'Editar relato';
-      this.url = UrlGlobal.url;
-      this.story = new Story('', '', '', '', 2010, '','');
-      this.category = new Category('','',-1);
-      this.ruta = '';
-      this.clickFile = false;
-      this.status = '';
-      this.filesToUpload = [];
-      this.msjError = '';
-      this.idStory = '';
+  )
+  {
+    this.title = 'Editar relato';
+    this.submitButtonName = 'Guardar'
+    this.url = UrlGlobal.url;
+    this.story = new Story('', '', '', '', 2010, '','');
+    this.category = new Category('','',-1);
+    this.ruta = '';
+    this.clickFile = false;
+    this.status = '';
+    this.filesToUpload = [];
+    this.msjError = '';
+    this.idStory = '';
   }
 
   ngOnInit(): void {
@@ -49,7 +52,6 @@ export class EditComponent implements OnInit {
       this.idStory = params.id;
     });
     this.getStory(this.idStory);
-    this.ruta = this.url+'story/getimage/'+this.story.image;
   }
 
   getStory(id: String) {
@@ -58,6 +60,7 @@ export class EditComponent implements OnInit {
       response => {
         if (response.story) {
           this.story = response.story;
+          this.ruta = this.url + 'story/getimage/' + this.story.image;
         }
       },
       error => {

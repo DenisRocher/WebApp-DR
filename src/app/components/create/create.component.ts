@@ -15,6 +15,7 @@ import { Category } from '../../models/category';
 })
 export class CreateComponent implements OnInit {
   public title: String;
+  public submitButtonName: String;
   public story: Story;
   public category: Category;
   public ruta: any;
@@ -31,6 +32,7 @@ export class CreateComponent implements OnInit {
       )
     {
     this.title = 'Crear relato';
+    this.submitButtonName = 'Crear';
     this.story = new Story('', '', '', '', 2010, '','');
     this.category = new Category('', '', -1);
     this.url = '';

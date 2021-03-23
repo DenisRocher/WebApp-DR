@@ -68,7 +68,6 @@
       [ngClass]="(ruta=='')?'ng-invalid':'ng-valid'">{{ruta}}</div>
       <label for="file_1"></label>
       <input id="file_1" class="upload" type="file" name="image"
-        required 
         #image="ngModel" [(ngModel)]="story.image"
         (change)="fileUpload($event)" 
         (ngModelChange)="filePath($event)" >
@@ -78,7 +77,7 @@
     <img src="../../../assets/img/warning.png" alt="warning" width="21" height="21">La fotografía del relato es obligatoria.
   </div>
 <div class="input__row">
-  <input class="submitbtn" type="submit" value="Crear" [disabled]='!storyForm.form.valid'>
+  <input class="submitbtn" type="submit" value="{{submitButtonName}}" [disabled]='!storyForm.form.valid'>
   <span class="form-arrow"></span>
 </div>
 </form>

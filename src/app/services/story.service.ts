@@ -50,7 +50,7 @@ export class StoryService{
     let params = JSON.stringify(story);
     let headers = new HttpHeaders().set('Content-Type','application/json');
     
-    return this._http.post(this.url + 'story/update/'+story._id, params, {headers: headers});
+    return this._http.put(this.url + 'story/update/'+story._id, params, {headers: headers});
   }
 }
 
