@@ -46,6 +46,14 @@ export class StoryService{
     return this._http.delete(this.url + 'story/delete/'+ params, {headers: headers});
   }
 
+  removeUpload(image:String): Observable<any> {
+    let params = image;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    
+    return this._http.delete(this.url + 'story/delete-image/'+ params, {headers: headers});
+  }
+  
+
   updateStory(story:Story): Observable<any> {
     let params = JSON.stringify(story);
     let headers = new HttpHeaders().set('Content-Type','application/json');
