@@ -57,6 +57,7 @@ export class DetailComponent implements OnInit {
 
   setConfirm(confirm: any) {
     this.confirm = confirm;
+    console.log(this.story.image);
   }
 
   deleteStory(id: String) {
@@ -65,6 +66,11 @@ export class DetailComponent implements OnInit {
     this._storyService.deleteStory(id).subscribe(
       response => {
         if (response.story) {
+          //Si existe se borra la imagen
+          if (this.story.image != '') {
+            this._storyService.removeUpload(this.story.image).subscribe(
+            )
+          }
           //console.log(response);
           this._router.navigate(['/relatos']);
         }
