@@ -17,18 +17,18 @@
     <p>{{story.description}}
     </p>
     <img src="../../../assets/img/text.png" alt="">
-  </article>
-</div>
-<div class="hack"></div>
-<div>
-  <p *ngIf="!confirm">
+      <p *ngIf="!confirm">
     <a (click)='setConfirm(true)' class="button-delete">Borrar</a>
     <a [routerLink]="['/editar-relato',story._id]" class="button-edit">Editar</a>
   </p>
-  <p *ngIf="confirm">
+  <p *ngIf="confirm" class='dropConfirm'>
+    <span class="dropConfirm">¿Estás seguro que quieres eliminar este relato?</span>
     <a (click)='deleteStory(story._id)' class="button-delete">Confirmar</a>
     <a (click)='setConfirm(false)' class="button-edit">Cancelar</a>
-  </p></div>
+  </p>
+  </article>
+</div>
+<div class="hack"></div>
 <div class="hack"></div>
 
 
