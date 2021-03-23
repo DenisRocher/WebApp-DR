@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Story } from "../../models/story";
 import { StoryService } from '../../services/story.service';
 import { UploadService } from '../../services/upload.service';
+import { GlobalfunctionService } from '../../services/globalfunction.service'
+
 import { UrlGlobal } from '../../services/global';
 
 import { Category } from '../../models/category';
@@ -11,7 +13,7 @@ import { Category } from '../../models/category';
   selector: 'app-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.sass'],
-  providers: [StoryService, UploadService]
+  providers: [StoryService, UploadService, GlobalfunctionService]
 })
 export class CreateComponent implements OnInit {
   public title: String;
@@ -28,7 +30,8 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _storyService: StoryService,
-    private _uploadService: UploadService
+    private _uploadService: UploadService,
+    private _globalFunctionService: GlobalfunctionService
       )
     {
     this.title = 'Crear relato';
@@ -45,6 +48,7 @@ export class CreateComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this._globalFunctionService.scrollTop();
   }
 
   onSubmit(form: any) {
@@ -83,7 +87,7 @@ export class CreateComponent implements OnInit {
         console.log(<any>error)
       }
     );
-    this.scrollTop();
+    this._globalFunctionService.scrollTop();
   }
 
   fileUpload(fileInput: any) {
@@ -92,16 +96,5 @@ export class CreateComponent implements OnInit {
     //console.log(this.filesToUpload);
     this.clickFile = true;
     this.ruta = this.filesToUpload[0].name;
-  }
-
-  scrollTop(){
-    let scrollToTop = window.setInterval(() => {
-      let pos = window.pageYOffset;
-      if (pos > 0) {
-        window.scrollTo(0, pos - 20); // how far to scroll on each step
-      } else {
-        window.clearInterval(scrollToTop);
-      }
-    }, 16);
   }
 }

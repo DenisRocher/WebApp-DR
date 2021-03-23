@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Story } from "../../models/story";
 import { StoryService } from '../../services/story.service';
 import { UploadService } from '../../services/upload.service';
+import { GlobalfunctionService } from '../../services/globalfunction.service'
 
 import { UrlGlobal } from '../../services/global';
 import { Router, ActivatedRoute, Params } from "@angular/router";
@@ -11,7 +12,7 @@ import { Category } from '../../models/category';
   selector: 'app-stories',
   templateUrl: '../create/create.component.html',
   styleUrls: ['./edit.component.sass'],
-  providers: [StoryService, UploadService]
+  providers: [StoryService, UploadService, GlobalfunctionService]
 })
 export class EditComponent implements OnInit {
 
@@ -30,6 +31,7 @@ export class EditComponent implements OnInit {
   constructor(
     private _storyService: StoryService,
     private _uploadService: UploadService,
+    private _globalFunctionService: GlobalfunctionService,
     private _router: Router,
     private _route: ActivatedRoute
   ) {
@@ -51,6 +53,7 @@ export class EditComponent implements OnInit {
       this.idStory = params.id;
     });
     this.getStory(this.idStory);
+    this._globalFunctionService.scrollTop();
   }
 
   getStory(id: String) {
@@ -105,7 +108,7 @@ export class EditComponent implements OnInit {
         console.log(<any>error)
       }
     );
-    this.scrollTop();
+    this._globalFunctionService.scrollTop();
   }
 
   fileUpload(fileInput: any) {
@@ -114,16 +117,5 @@ export class EditComponent implements OnInit {
     //console.log(this.filesToUpload);
     this.clickFile = true;
     this.ruta = this.filesToUpload[0].name;
-  }
-
-  scrollTop() {
-    let scrollToTop = window.setInterval(() => {
-      let pos = window.pageYOffset;
-      if (pos > 0) {
-        window.scrollTo(0, pos - 20); // how far to scroll on each step
-      } else {
-        window.clearInterval(scrollToTop);
-      }
-    }, 16);
   }
 }
