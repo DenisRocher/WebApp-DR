@@ -27,7 +27,7 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private _storyService: StoryService,
-    private _upladService: UploadService
+    private _uploadService: UploadService
       )
     {
     this.title = 'Crear relato';
@@ -54,7 +54,7 @@ export class CreateComponent implements OnInit {
         if (response.story) {
           //Subir la Imagen
           this.idStory = response.story._id;
-          this._upladService
+          this._uploadService
             .makeFileRequest(
               UrlGlobal.url + 'story/upload-image/' + response.story._id,
               [],

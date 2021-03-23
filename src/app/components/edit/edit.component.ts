@@ -5,7 +5,6 @@ import { UploadService } from '../../services/upload.service';
 
 import { UrlGlobal } from '../../services/global';
 import { Router, ActivatedRoute, Params } from "@angular/router";
-
 import { Category } from '../../models/category';
 
 @Component({
@@ -68,6 +67,42 @@ export class EditComponent implements OnInit {
   }
 
   onSubmit(form: any) {
+    this._storyService.updateStory(this.story).subscribe(
+      response => {
+        //console.log(response);
+        if (response.story) {
+          //Subir la Imagen
+          this.idStory = response.story._id;
+          if (this.filesToUpload.length >= 1) {
+            this._uploadService
+              .makeFileRequest(
+                UrlGlobal.url + 'story/upload-image/' + response.story._id,
+                [],
+                this.filesToUpload,
+                'image'
+              )
+              .then((result: any) => {
+                this.status = 'OK';
+                console.log(result);
+              })
+              .catch((error: any) => {
+                this.status = 'KO';
+                this.msjError = error.message;
+                console.log(this.msjError)
+                console.log(error);
+              });
+          }
+          else {
+            this.status = 'OK';
+          }
+        }
+        else
+          this.status = 'KO';
+      },
+      error => {
+        console.log(<any>error)
+      }
+    );
   }
 
   filePath(fileInput: any) {
