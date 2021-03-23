@@ -50,7 +50,7 @@
   <p>
     <label for="image">Fotografia</label>
   </p>
-  <div *ngIf="story.image" >
+  <div *ngIf="story.image && !clickFile" >
     <img src="{{url}}story/getimage/{{story.image}}" 
         width='250px'
         *ngIf="story.image 
