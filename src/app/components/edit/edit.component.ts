@@ -77,5 +77,6 @@ export class EditComponent implements OnInit {
 
   fileUpload(fileInput: any) {
     this.filesToUpload = <Array<File>>fileInput.target.files;
+    console.log(this.file)
   }
 }
