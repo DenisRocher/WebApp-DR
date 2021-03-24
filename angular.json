@@ -34,10 +34,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/assets/css/styles.sass"
+              "src/assets/css/styles.sass",
+              "src/assets/js/bxslider/dist/jquery.bxslider.min.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/assets/js/bxslider/dist/jquery.bxslider.min.js"
             ]
           },
           "configurations": {
