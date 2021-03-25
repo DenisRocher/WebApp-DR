@@ -44,7 +44,5 @@ export class ContactComponent implements OnInit {
 
   getAutor(event: any): void{
     this.autor = event;
-    console.log(typeof (this.autor));
-    console.log(Object.keys(this.autor).length);
   }
 }
