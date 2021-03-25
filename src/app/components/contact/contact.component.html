@@ -1,11 +1,13 @@
 <div class='container'>
   <h2>Contacto</h2>
   <label for="name">Cambiar tamaño del slider:</label>
-  <input type="number" [(ngModel)]="widthSlider" (keyup.enter)='reDimensionarSlider()'/>
+  <input type="number" [(ngModel)]="widthSlider"/>
+  <button (click)='cargarSlider()'>Cargar Slider</button>
+  <button (click)='vaciarSlider()'>Reset</button>
   <hr>
-  <div *ngIf="widthToSlider >0">
-  <!-- Permite transmitir del padre al hijo una variable-->
-  <app-slider [anchoFotos]='widthToSlider'></app-slider>
+  <div *ngIf="widthToSlider > 0">
+    <!-- Permite transmitir del padre al hijo una variable-->
+    <app-slider [anchoFotos]='widthToSlider'></app-slider>
   </div>
   <div class="hack"></div>
 </div>

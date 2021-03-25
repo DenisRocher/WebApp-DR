@@ -11,7 +11,7 @@ declare var $: any;
 })
 export class ContactComponent implements OnInit {
   public widthSlider: number;
-  public widthToSlider // => number | undefinde | null;
+  public widthToSlider // => number | undefined | null;
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
@@ -35,6 +35,7 @@ export class ContactComponent implements OnInit {
   }
 
   vaciarSlider(): void{
+    this.widthSlider = 0;
     this.widthToSlider = 0;
   }
 }
