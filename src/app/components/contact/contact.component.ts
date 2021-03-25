@@ -14,6 +14,8 @@ export class ContactComponent implements OnInit {
   public widthToSlider: any;
   public paginas: boolean;
   public autor: any;
+  public objectKeys = Object.keys;
+
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
@@ -43,6 +45,6 @@ export class ContactComponent implements OnInit {
   getAutor(event: any): void{
     this.autor = event;
     console.log(typeof (this.autor));
-    console.log(this.autor.length)
+    console.log(Object.keys(this.autor).length);
   }
 }

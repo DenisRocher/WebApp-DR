@@ -14,7 +14,7 @@
       (publicAutor)='getAutor($event)'>
     </app-slider>
   </div>
-  <div *ngIf="autor.length > 0">
+  <div *ngIf="objectKeys(autor).length > 0">
     <span>{{autor.name + ' - ' + autor.website + ' - ' +autor.mail}}</span>
   </div>
   <div class="hack"></div>
