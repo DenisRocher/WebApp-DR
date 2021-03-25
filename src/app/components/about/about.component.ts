@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GlobalfunctionService } from '../../services/globalfunction.service'
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.sass']
+  styleUrls: ['./about.component.sass'],
+  providers: [GlobalfunctionService]
 })
 export class AboutComponent implements OnInit {
   public title: String;
@@ -11,7 +12,9 @@ export class AboutComponent implements OnInit {
   public email: String;
   public web: String;
 
-  constructor() {
+  constructor(
+    private _globalFunctionService: GlobalfunctionService
+  ) {
     this.title = 'Denis Rocher';
     this.subtitle = 'Fotógrafo callejero';
     this.email = 'denis.rocher@gmail.com';
@@ -21,6 +24,7 @@ export class AboutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this._globalFunctionService.scrollTop();
   }
 
 }

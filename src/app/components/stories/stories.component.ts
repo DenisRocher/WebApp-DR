@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Story } from "../../models/story";
 import { StoryService } from '../../services/story.service';
+import { GlobalfunctionService } from '../../services/globalfunction.service'
 import { UrlGlobal } from '../../services/global';
 
 @Component({
   selector: 'app-stories',
   templateUrl: './stories.component.html',
   styleUrls: ['./stories.component.sass'],
-  providers: [StoryService]
+  providers: [StoryService, GlobalfunctionService]
 })
 export class StoriesComponent implements OnInit {
   public stories: Story[];
@@ -15,7 +16,8 @@ export class StoriesComponent implements OnInit {
   public url: String;
 
   constructor(
-    private _storyService: StoryService
+    private _storyService: StoryService,
+    private _globalFunctionService: GlobalfunctionService
   ) {
     this.filterCategory = '';
     this.stories = [new Story('', '', '', '', 2010, '','')];
@@ -24,6 +26,7 @@ export class StoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.gestStories('');
+    this._globalFunctionService.scrollTop();
   }
 
   gestStories(filterCategory: String) {
