@@ -9,7 +9,7 @@ declare var $: any;
 export class SliderComponent implements OnInit {
   @Input() anchoFotos: number | undefined;
   @Input('paginas') pager: boolean | undefined;
-  @Output() getAutor = new EventEmitter();
+  @Output() conseguirAutor = new EventEmitter();
 
   public autor: any;
 
@@ -33,7 +33,7 @@ export class SliderComponent implements OnInit {
 
   publishCredit(event: any) {
     console.log(event);
-    this.getAutor.emit(this.autor);
+    this.conseguirAutor.emit(this.autor);
   }
 
 }

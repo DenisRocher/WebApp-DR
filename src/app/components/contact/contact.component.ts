@@ -41,4 +41,8 @@ export class ContactComponent implements OnInit {
     this.widthSlider = 0;
     this.widthToSlider = null;
   }
+
+  getAutor(event:any): void{
+    console.log(event);
+  }
 }
