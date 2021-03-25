@@ -1,17 +1,21 @@
 <div class='container'>
   <h2>Contacto</h2>
   <label for="name">Cambiar tamaño del slider:</label>
-  <input type="number" [(ngModel)]="widthSlider"/>
-  <button (click)='cargarSlider()'>Cargar Slider</button>
-  <button (click)='vaciarSlider()'>Reset</button>
+  <input type="number" name="" 
+    [(ngModel)]="widthSlider" 
+    (keyup.enter)="cargarSlider()" 
+    (keyup)="resetSlider($event)"/>
   <hr>
   <div *ngIf="widthToSlider">
     <!-- Permite transmitir del padre al hijo una variable-->
     <app-slider 
       [anchoFotos]='widthToSlider'
-      [paginas]='paginas'>
-      (conseguirAutor)='getAutor($event)'
+      [paginas]='paginas'
+      (publicAutor)='getAutor($event)'>
     </app-slider>
+  </div>
+  <div *ngIf="autor.length > 0">
+    <span>{{autor.name + ' - ' + autor.website + ' - ' +autor.mail}}</span>
   </div>
   <div class="hack"></div>
 </div>

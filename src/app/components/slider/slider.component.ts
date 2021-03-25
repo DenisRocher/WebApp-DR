@@ -9,13 +9,13 @@ declare var $: any;
 export class SliderComponent implements OnInit {
   @Input() anchoFotos: number | undefined;
   @Input('paginas') pager: boolean | undefined;
-  @Output() conseguirAutor = new EventEmitter();
+  @Output() publicAutor = new EventEmitter();
 
   public autor: any;
 
   constructor() {
     this.autor = {
-      nombre: 'Denis Rocher',
+      name: 'Denis Rocher',
       website: 'https://github.com/DenisRocher',
       mail: 'denis.rocher@gmail.com'
     }
@@ -32,8 +32,6 @@ export class SliderComponent implements OnInit {
   }
 
   publishCredit(event: any) {
-    console.log(event);
-    this.conseguirAutor.emit(this.autor);
+    this.publicAutor.emit(this.autor);
   }
-
 }

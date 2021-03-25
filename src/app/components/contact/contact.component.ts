@@ -13,6 +13,7 @@ export class ContactComponent implements OnInit {
   public widthSlider: number;
   public widthToSlider: any;
   public paginas: boolean;
+  public autor: any;
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
@@ -21,15 +22,11 @@ export class ContactComponent implements OnInit {
     this.widthSlider = 800;
     this.paginas = true;
     this.widthToSlider = this.widthSlider;
+    this.autor = [];
   }
 
   ngOnInit(): void {
     this._globalFunctionService.scrollTop();
-  }
-
-  reDimensionarSlider(): void{
-    this.vaciarSlider();
-    this.cargarSlider();
   }
 
   cargarSlider(): void{
@@ -37,12 +34,15 @@ export class ContactComponent implements OnInit {
     this.widthToSlider = this.widthSlider;
   }
 
-  vaciarSlider(): void{
-    this.widthSlider = 0;
-    this.widthToSlider = null;
+  resetSlider(event:any){
+    if(event.keyCode !== 13 ){
+      this.widthToSlider = null;
+    }
   }
 
-  getAutor(event:any): void{
-    console.log(event);
+  getAutor(event: any): void{
+    this.autor = event;
+    console.log(typeof (this.autor));
+    console.log(this.autor.length)
   }
 }
