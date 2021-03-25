@@ -1,6 +1,13 @@
 <div class='container'>
   <h2>Contacto</h2>
-  <app-slider></app-slider>
+  <label for="name">Cambiar tamaño del slider:</label>
+  <input type="number" [(ngModel)]="widthSlider" />
+  <hr>
+  <div *ngIf="widthSlider">
+  <!-- Permite transmitir del padre al hijo una variable-->
+  <app-slider [anchoFotos]='widthSlider'></app-slider>
+  </div>
+  <div class="hack"></div>
 </div>
 
 

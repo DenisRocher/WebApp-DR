@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 declare var $: any;
 
 @Component({
@@ -7,7 +7,8 @@ declare var $: any;
   styleUrls: ['./slider.component.sass']
 })
 export class SliderComponent implements OnInit {
-
+  @Input() anchoFotos: number;
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -16,7 +17,7 @@ export class SliderComponent implements OnInit {
       autoControls: true,
       stopAutoOnClick: true,
       pager: true,
-      slideWidth: 800
+      slideWidth: this.anchoFotos
     });
   }
 

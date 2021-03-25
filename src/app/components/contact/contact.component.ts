@@ -10,11 +10,14 @@ declare var $: any;
   providers: [GlobalfunctionService]
 })
 export class ContactComponent implements OnInit {
+  public widthSlider: number;
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
   )
-  {}
+  {
+    this.widthSlider = 800;
+  }
 
   ngOnInit(): void {
     this._globalFunctionService.scrollTop();
