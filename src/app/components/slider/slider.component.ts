@@ -7,17 +7,17 @@ declare var $: any;
   styleUrls: ['./slider.component.sass']
 })
 export class SliderComponent implements OnInit {
-  @Input() anchoFotos: number;
+  @Input() anchoFotos: number | undefined;
   
   constructor() { }
 
   ngOnInit(): void {
       $('.galeria').bxSlider({
-      auto: true,
-      autoControls: true,
-      stopAutoOnClick: true,
-      pager: true,
-      slideWidth: this.anchoFotos
+        auto: true,
+        autoControls: true,
+        stopAutoOnClick: true,
+        pager: true,
+        slideWidth: this.anchoFotos
     });
   }
 

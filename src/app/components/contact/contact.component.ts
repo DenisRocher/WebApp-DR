@@ -11,15 +11,21 @@ declare var $: any;
 })
 export class ContactComponent implements OnInit {
   public widthSlider: number;
+  public widthToSlider: number;
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
   )
   {
-    this.widthSlider = 800;
+    this.widthSlider = 0;
+    this.widthToSlider = this.widthSlider;
   }
 
   ngOnInit(): void {
     this._globalFunctionService.scrollTop();
+  }
+
+  reDimensionarSlider(): void{
+    this.widthToSlider = this.widthSlider;
   }
 }
