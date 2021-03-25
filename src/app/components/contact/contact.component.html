@@ -5,9 +5,13 @@
   <button (click)='cargarSlider()'>Cargar Slider</button>
   <button (click)='vaciarSlider()'>Reset</button>
   <hr>
-  <div *ngIf="widthToSlider > 0">
+  <div *ngIf="widthToSlider">
     <!-- Permite transmitir del padre al hijo una variable-->
-    <app-slider [anchoFotos]='widthToSlider'></app-slider>
+    <app-slider 
+      [anchoFotos]='widthToSlider'
+      [paginas]='paginas'>
+      (getAutor)=
+    </app-slider>
   </div>
   <div class="hack"></div>
 </div>

@@ -11,13 +11,15 @@ declare var $: any;
 })
 export class ContactComponent implements OnInit {
   public widthSlider: number;
-  public widthToSlider // => number | undefined | null;
+  public widthToSlider: any;
+  public paginas: boolean;
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
   )
   {
-    this.widthSlider = 0;
+    this.widthSlider = 800;
+    this.paginas = true;
     this.widthToSlider = this.widthSlider;
   }
 
@@ -31,11 +33,12 @@ export class ContactComponent implements OnInit {
   }
 
   cargarSlider(): void{
+    this.paginas = false;
     this.widthToSlider = this.widthSlider;
   }
 
   vaciarSlider(): void{
     this.widthSlider = 0;
-    this.widthToSlider = 0;
+    this.widthToSlider = null;
   }
 }
