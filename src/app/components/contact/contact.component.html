@@ -3,7 +3,7 @@
   <label for="name">Cambiar tamaño del slider:</label>
   <input type="number" [(ngModel)]="widthSlider" (keyup.enter)='reDimensionarSlider()'/>
   <hr>
-  <div *ngIf="widthToSlider">
+  <div *ngIf="widthToSlider >0">
   <!-- Permite transmitir del padre al hijo una variable-->
   <app-slider [anchoFotos]='widthToSlider'></app-slider>
   </div>
