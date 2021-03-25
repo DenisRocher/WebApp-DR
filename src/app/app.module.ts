@@ -20,6 +20,7 @@ import { ErrorComponent } from './components/error/error.component';
 import { StoriesComponent } from './components/stories/stories.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { EditComponent } from './components/edit/edit.component';
+import { SliderComponent } from './components/slider/slider.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { EditComponent } from './components/edit/edit.component';
     StoriesComponent,
     DetailComponent,
     EditComponent,
+    SliderComponent,
   ],
   imports: [
     BrowserModule,
