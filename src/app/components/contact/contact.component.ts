@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GlobalfunctionService } from '../../services/globalfunction.service'
 
 declare var $: any;
@@ -16,6 +16,8 @@ export class ContactComponent implements OnInit {
   public autor: any;
   public objectKeys = Object.keys;
 
+  @ViewChild('textosContacto', {static:true}) textos: any;
+
 
   constructor(
     private _globalFunctionService: GlobalfunctionService
@@ -28,6 +30,10 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    var opcion_clasica = document.querySelector('#textoContacto')!.innerHTML;
+    //console.log(this.textos);
+    //console.log(this.textos.nativeElement.textContent);
+    //this.textos.nativeElement.textContent = 'Nuevo texto de la consulta';
     this._globalFunctionService.scrollTop();
   }
 

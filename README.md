@@ -21,6 +21,15 @@ Objetivos del ejercicio:
 - [X] Botón de editar proyecto, y hacer que funcione.
 - [X] Botón de borrar proyecto, y hacer que funcione.
 
+EXTRAS
+- [X] Integrar jQuery a Angular
+- [X] Comunicación entre componentes:
+    - Propiedad Input (Padre => Hijo)
+    - Propiedad Output (Hijo => Padre)
+- [X] ViewChild y Directivas:
+    - @ViewChild
+    - Directivas Personalizadas
+
 
 
 
